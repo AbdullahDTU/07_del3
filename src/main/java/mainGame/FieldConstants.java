@@ -15,6 +15,15 @@ public class FieldConstants {
     public static final String LIBRARY_NAME = "LIBRARY";
     public static final String SKATER_NAME = "SKATER PARK";
     public static final String POOL_NAME = "SWIMMING POOL";
+    public static final String GAMING_NAME = "GAMING HALL";
+    public static final String CINEMA_NAME = "CINEMA";
+    public static final String TOY_NAME = "TOY STORE";
+    public static final String PET_NAME = "PET STORE";
+    public static final String GO_TO_JAIL_NAME = "GO TO JAIL!";
+    public static final String BOWLING_NAME = "BOWLING HALL";
+    public static final String ZOO_NAME = "ZOO";
+    public static final String WATER_NAME = "WATER PARK";
+    public static final String PROMENADE_NAME = "THE PROMENADE";
 
 
     //Rent of field
@@ -26,6 +35,17 @@ public class FieldConstants {
     public static final String LIBRARY_RENT = "2";
     public static final String SKATER_RENT = "2";
     public static final String POOL_RENT = "2";
+    public static final String GAMING_RENT = "3";
+    public static final String CINEMA_RENT = "3";
+    public static final String TOY_RENT = "3";
+    public static final String PET_RENT = "3";
+    public static final String BOWLING_RENT = "4";
+    public static final String ZOO_RENT = "4";
+    public static final String WATER_RENT = "5";
+    public static final String PROMENADE_RENT = "5";
+
+
+
 
     //Description of field
     public static final String START_DESCRIPTION = "Recieve 1M when passing or landing here";
@@ -40,6 +60,16 @@ public class FieldConstants {
     public static final String LIBRARY_DESCRIPTION = String.format("Buy this field for %S M", LIBRARY_RENT);
     public static final String SKATER_DESCRIPTION = String.format("Buy this field for %S M", SKATER_RENT);
     public static final String POOL_DESCRIPTION = String.format("Buy this field for %S M", POOL_RENT);
+    public static final String GAMING_DESCRIPTION = String.format("Buy this field for %S M", GAMING_RENT);
+    public static final String CINEMA_DESCRIPTION = String.format("Buy this field for %S M", CINEMA_RENT);
+    public static final String TOY_DESCRIPTION = String.format("Buy this field for %S M", TOY_RENT);
+    public static final String PET_DESCRIPTION = String.format("Buy this field for %S M", PET_RENT);
+    public static final String GO_TO_JAIL_DESCRIPTION = "GO TO JAIL!";
+    public static final String BOWLING_DESCRIPTION = String.format( "Buy this filed for %S M", BOWLING_RENT);
+    public static final String ZOO_DESCRIPTION = String.format( "Buy this filed for %S M", ZOO_RENT);
+    public static final String WATER_DESCRIPTION = String.format( "Buy this filed for %S M", WATER_RENT);
+    public static final String PROMENADE_DESCRIPTION = String.format( "Buy this filed for %S M", PROMENADE_RENT);
+
 
     //Subtext of field
     public static final String START_SUBTEXT = "";
@@ -54,6 +84,16 @@ public class FieldConstants {
     public static final String LIBRARY_SUBTEXT = LIBRARY_RENT + "M";
     public static final String SKATER_SUBTEXT = SKATER_RENT + "M";
     public static final String POOL_SUBTEXT = POOL_RENT + "M";
+    public static final String GAMING_SUBTEXT = GAMING_RENT + "M";
+    public static final String CINEMA_SUBTEXT = CINEMA_RENT + "M";
+    public static final String TOY_SUBTEXT = TOY_RENT + "M";
+    public static final String PET_SUBTEXT = PET_RENT + "M";
+    public static final String GO_TO_JAIL_SUBTEXT = "GO TO JAIL ";
+    public static final String BOWLING_SUBTEXT = "M";
+    public static final String ZOO_SUBTEXT = "M";
+    public static final String WATER_SUBTEXT = "M";
+    public static final String PROMENADE_SUBTEXT = "M";
 
 
 }
+
