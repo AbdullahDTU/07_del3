@@ -9,7 +9,7 @@ public class Main {
         GUI gui = new GUI(Field.getFields());
 
         //Arraylist for GUI Fields
-        GUI_Field[] guiFields = new GUI_Field[24];
+        //GUI_Field[] guiFields = new GUI_Field[24];
         //MainGame.Field objects
         GUI_Field field;
 

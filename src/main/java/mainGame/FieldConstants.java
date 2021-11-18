@@ -25,7 +25,6 @@ public class FieldConstants {
     public static final String WATER_NAME = "WATER PARK";
     public static final String PROMENADE_NAME = "THE PROMENADE";
 
-
     //Rent of field
     public static final String BURGER_RENT = "1";
     public static final String PIZZA_RENT = "1";
@@ -43,9 +42,6 @@ public class FieldConstants {
     public static final String ZOO_RENT = "4";
     public static final String WATER_RENT = "5";
     public static final String PROMENADE_RENT = "5";
-
-
-
 
     //Description of field
     public static final String START_DESCRIPTION = "Recieve 1M when passing or landing here";
@@ -70,7 +66,6 @@ public class FieldConstants {
     public static final String WATER_DESCRIPTION = String.format( "Buy this filed for %S M", WATER_RENT);
     public static final String PROMENADE_DESCRIPTION = String.format( "Buy this filed for %S M", PROMENADE_RENT);
 
-
     //Subtext of field
     public static final String START_SUBTEXT = "";
     public static final String CHANCE_SUBTEXT = "CHANCE";
@@ -93,7 +88,5 @@ public class FieldConstants {
     public static final String ZOO_SUBTEXT = "M";
     public static final String WATER_SUBTEXT = "M";
     public static final String PROMENADE_SUBTEXT = "M";
-
-
 }
 

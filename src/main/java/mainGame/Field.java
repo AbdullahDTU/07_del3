@@ -31,10 +31,6 @@ public class Field {
     private static final GUI_Field field23 = new GUI_Street(FieldConstants.WATER_NAME, FieldConstants.WATER_SUBTEXT, FieldConstants.WATER_DESCRIPTION, FieldConstants.WATER_RENT, new Color(6, 24, 68), Color.WHITE);
     private static final GUI_Field field24 = new GUI_Street(FieldConstants.PROMENADE_NAME, FieldConstants.PROMENADE_SUBTEXT, FieldConstants.PROMENADE_DESCRIPTION, FieldConstants.PROMENADE_RENT, new Color(6, 18, 68), Color.WHITE);
 
-
-
-
-
     //GUI Field Array. The fields are shown in the order they are added in
     private static GUI_Field[] fields = new GUI_Field[]{
             field1,
@@ -61,8 +57,6 @@ public class Field {
             field22,
             field23,
             field24,
-
-
     };
 
     public static GUI_Field[] getFields() {
