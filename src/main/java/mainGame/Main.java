@@ -1,12 +1,17 @@
 package mainGame;
 
+import dies.Die;
+import dies.Dice;
+
 import gui_fields.*;
 import gui_main.GUI;
 
+import java.awt.*;
+
 public class Main {
     public static void main(String[] args) {
-
-        GUI gui = new GUI(Field.getFields());
+        GUI gui = new GUI(Field.getFields(), new Color(176, 234, 220));
+        GameController gameController = new GameController(gui);
 
         //Arraylist for GUI Fields
         //GUI_Field[] guiFields = new GUI_Field[24];
@@ -23,21 +28,8 @@ public class Main {
         //Adds the players to the game
         gui.addPlayer(player);
 
-
-        gui.setDice(1, 2); // Showing to Dices with value
-
-        while(true){
-            // Input from player
-            String choice = gui.getUserButtonPressed("Please choice", "Roll with 1 dice", "Rolle with 2 dices");
-            if( choice.equals("Roll with 1 dice") )
-                gui.setDie(6); // Dice value with 6
-            if( choice.equals("Rolls with 2 dices") )
-                gui.setDice(1, 2); // Dice value with 1 and 2
-        }
-
-
-
-
+        gameController.initGame();
+        gameController.startGame();
     }
 
 }
