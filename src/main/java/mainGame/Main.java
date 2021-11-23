@@ -23,10 +23,10 @@ public class Main {
         field = fields[0];
 
         // Creating players with a name and balances
-        GUI_Player player = new GUI_Player("Stephen", 20000);
+        //GUI_Player player = new GUI_Player("Stephen", 20000);
 
         //Adds the players to the game
-        gui.addPlayer(player);
+        //gui.addPlayer(player);
 
         gameController.initGame();
         gameController.startGame();
