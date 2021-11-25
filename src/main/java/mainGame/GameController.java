@@ -2,12 +2,14 @@ package mainGame;
 
 import dies.Dice;
 import gui_fields.GUI_Car;
+import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class GameController {
     private GUI gui;
@@ -102,19 +104,55 @@ public class GameController {
         } while (!this.gameHasFinished);
     }
 
-    public void playRound() {
+    private boolean playerWishesToRollDice() {
+        //Makes a pressable button called "Roll the dice"
+        String choice = gui.getUserButtonPressed("Roll the dice:", "Roll");
+        return choice.equals("Roll");
+    }
 
-        while (true) {
-            System.out.println("Done");
-            //Makes a pressable button called "Roll the dice"
-            String choice = gui.getUserButtonPressed("Roll the dice:", "Roll the dice");
-            if (choice.equals("Roll the dice"))
+    public void playRound() {
+        for (Player player : this.players) {
+
+            if (playerWishesToRollDice()) {
                 //Roll the Dice
                 dice.rollTheDice();
+            }
+
+            //Sets diceValue to sum of dice
             int diceValue = getDice().getSum();
 
             //Displays the rolled dice on the Board
             gui.setDice(getDice().getRollingDice().get(0).getFaceValue(), getDice().getRollingDice().get(1).getFaceValue()); // Dice value with 1 and 2
+
+            //Get current and new player positions
+            int currentPlayerPosition = player.getPosition();
+            int newPlayerPosition = calculateNewPlayerPosition(currentPlayerPosition, diceValue);
+
+            System.out.println(currentPlayerPosition);
+
+            //Gets new player position in GUI
+            GUI_Field newGUIField = gui.getFields()[newPlayerPosition];
+
+            //Visually sets player position to new position on the board
+            player.getGUIPlayer().getCar().setPosition(newGUIField);
+
+            //Sets player position to new position
+            player.setPosition(newPlayerPosition);
         }
     }
+
+    //Calculates the new player position after throwing dice
+    private int calculateNewPlayerPosition(int currentPlayerPosition, int diceRollSum) {
+        int possibleNewPosition = currentPlayerPosition + diceRollSum;
+        int numberOfFields = this.gui.getFields().length;
+
+        int modulosResult = Math.floorMod(possibleNewPosition, numberOfFields);
+
+        if (Objects.equals(modulosResult, 0)) {
+            return 0;
+        } else {
+            return modulosResult;
+        }
+    }
+
 }
