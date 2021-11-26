@@ -6,14 +6,9 @@ import java.util.Arrays;
 public class Dice {
     private ArrayList<Die> rollingDice;
     private int sum;
-    private Object Dice;
 
     public ArrayList<Die> getRollingDice() {
         return rollingDice;
-    }
-
-    public void setRollingDice(ArrayList<Die> rollingDice) {
-        this.rollingDice = rollingDice;
     }
 
     public void setSum(int sum) {

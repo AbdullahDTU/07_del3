@@ -1,7 +1,6 @@
 package mainGame;
 
 import gui_fields.GUI_Car;
-import gui_fields.GUI_Field;
 
 import java.awt.*;
 
