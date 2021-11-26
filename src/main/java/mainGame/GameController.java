@@ -4,6 +4,7 @@ import dies.Dice;
 import gui_fields.GUI_Car;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
+import gui_fields.GUI_Street;
 import gui_main.GUI;
 
 import java.awt.*;
@@ -138,7 +139,43 @@ public class GameController {
 
             //Sets player position to new position
             player.setPosition(newPlayerPosition);
+
+            //Price of field
+            int priceOfField = getFieldPrice(newPlayerPosition, player);
+            System.out.println("priceOfField: " + priceOfField);
+
+            int currentPlayerBalance = player.getGUIPlayer().getBalance();
+            System.out.println("CurrentPlayerBalance: " + currentPlayerBalance);
+
+            //Substracts price of field from player balance
+            changePlayerBalance(priceOfField, player);
         }
+    }
+
+    //Calculates new player balance
+    public void changePlayerBalance(int priceOfField, Player player){
+        int playerBalance = player.getGUIPlayer().getBalance();
+        int newPlayerBalance = playerBalance - priceOfField;
+
+        //Changes player balance to new and displays it
+        player.getGUIPlayer().setBalance(newPlayerBalance);
+
+        System.out.println("NewPlayerBalance: " + newPlayerBalance);
+    }
+
+    public int getFieldPrice(int newPlayerPosition, Player player) {
+        GUI_Field fieldsFromGUI = gui.getFields()[newPlayerPosition];
+
+        //Sets fieldPriceStr to the field's subtext
+        String fieldPriceStr = fieldsFromGUI.getSubText();
+
+        System.out.println("fieldPriceStr: " + fieldPriceStr);
+
+        //Returns string of field price with only numbers
+        String fieldPriceNumberOnly = fieldPriceStr.replaceAll("[^0-9]", "");
+
+        //Turns the string field price into an integer and returns it
+        return Integer.parseInt(fieldPriceNumberOnly);
     }
 
     //Calculates the new player position after throwing dice

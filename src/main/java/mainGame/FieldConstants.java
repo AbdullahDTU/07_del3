@@ -67,10 +67,10 @@ public class FieldConstants {
     public static final String PROMENADE_DESCRIPTION = String.format( "Buy this filed for %S M", PROMENADE_RENT);
 
     //Subtext of field
-    public static final String START_SUBTEXT = "";
-    public static final String CHANCE_SUBTEXT = "CHANCE";
-    public static final String JAIL_SUBTEXT = "JAIL";
-    public static final String PARKING_SUBTEXT = "";
+    public static final String START_SUBTEXT = "0";
+    public static final String CHANCE_SUBTEXT = "CHANCE 0";
+    public static final String JAIL_SUBTEXT = "JAIL 0";
+    public static final String PARKING_SUBTEXT = "0";
     public static final String BURGER_SUBTEXT = BURGER_RENT + "M";
     public static final String PIZZA_SUBTEXT = PIZZA_RENT + "M";
     public static final String SWEET_SUBTEXT = SWEET_RENT + "M";
@@ -83,7 +83,7 @@ public class FieldConstants {
     public static final String CINEMA_SUBTEXT = CINEMA_RENT + "M";
     public static final String TOY_SUBTEXT = TOY_RENT + "M";
     public static final String PET_SUBTEXT = PET_RENT + "M";
-    public static final String GO_TO_JAIL_SUBTEXT = "GO TO JAIL ";
+    public static final String GO_TO_JAIL_SUBTEXT = "GO TO JAIL 0";
     public static final String BOWLING_SUBTEXT = BOWLING_RENT + "M";
     public static final String ZOO_SUBTEXT = ZOO_RENT + "M";
     public static final String WATER_SUBTEXT = WATER_RENT + "M";
