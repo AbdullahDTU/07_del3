@@ -15,7 +15,7 @@ import java.util.Objects;
 public class GameController {
     private GUI gui;
     private Dice dice;
-    private boolean gameHasFinished;
+    private boolean gameHasFinished = false;
     private int playerAmount;
     private ArrayList<String> playerNames = new ArrayList<>();
     private ArrayList<Player> players = new ArrayList<>();
@@ -102,7 +102,7 @@ public class GameController {
         //Do loop to constantly run the game while gameHasFinished is false
         do {
             this.playRound();
-        } while (!this.gameHasFinished);
+        } while (!gameHasFinished);
     }
 
     private boolean playerWishesToRollDice() {
@@ -149,18 +149,40 @@ public class GameController {
 
             //Substracts price of field from player balance
             changePlayerBalance(priceOfField, player);
+
+            hasPlayerLost(player);
         }
     }
 
-    //Calculates new player balance
-    public void changePlayerBalance(int priceOfField, Player player){
+    public void hasPlayerLost(Player player) {
+        if (player.getGUIPlayer().getBalance() <= 0) {
+            gameHasFinished = true;
+            gui.showMessage(player.getGUIPlayer().getName() + " has lost all their money. Game over!");
+        }
+    }
+
+    //Changes player's balance
+    public void changePlayerBalance(int priceOfField, Player player) {
         int playerBalance = player.getGUIPlayer().getBalance();
-        int newPlayerBalance = playerBalance - priceOfField;
+        int newPlayerBalance = calculateNewPlayerBalance(playerBalance, priceOfField);
 
         //Changes player balance to new and displays it
         player.getGUIPlayer().setBalance(newPlayerBalance);
 
         System.out.println("NewPlayerBalance: " + newPlayerBalance);
+    }
+
+    //Calculates new player balance
+    public int calculateNewPlayerBalance(int playerBalance, int priceOfField) {
+        int newPlayerBalance = playerBalance - priceOfField;
+
+        if (Objects.equals(newPlayerBalance, 0)) {
+            System.out.println("Returned 0");
+            return 0;
+        } else {
+            System.out.println("Returned Rest");
+            return newPlayerBalance;
+        }
     }
 
     public int getFieldPrice(int newPlayerPosition, Player player) {
