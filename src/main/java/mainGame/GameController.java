@@ -15,6 +15,7 @@ import java.util.Objects;
 public class GameController {
     private GUI gui;
     private Dice dice;
+    private Cars cars;
     private boolean gameHasFinished = false;
     private int playerAmount;
     private ArrayList<String> playerNames = new ArrayList<>();
@@ -55,12 +56,15 @@ public class GameController {
 
     public void setUpPlayers() {
         //Creates the players from names inputted earlier
+        int i = 0;
         for (String playerName : playerNames) {
+
             Player createdPlayer = createPlayer(
                     playerName,
                     PlayerConstants.PLAYER_START_BALANCE,
-                    new GUI_Car(Color.WHITE, Color.RED, GUI_Car.Type.UFO, GUI_Car.Pattern.DOTTED)
+                    cars.getCars()[i]
             );
+            i++;
 
             //Adds created players to GUI
             gui.addPlayer(createdPlayer.getGUIPlayer());
