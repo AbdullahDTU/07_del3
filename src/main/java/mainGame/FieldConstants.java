@@ -84,9 +84,9 @@ public class FieldConstants {
     public static final String TOY_SUBTEXT = TOY_RENT + "M";
     public static final String PET_SUBTEXT = PET_RENT + "M";
     public static final String GO_TO_JAIL_SUBTEXT = "GO TO JAIL ";
-    public static final String BOWLING_SUBTEXT = "M";
-    public static final String ZOO_SUBTEXT = "M";
-    public static final String WATER_SUBTEXT = "M";
-    public static final String PROMENADE_SUBTEXT = "M";
+    public static final String BOWLING_SUBTEXT = BOWLING_RENT + "M";
+    public static final String ZOO_SUBTEXT = ZOO_RENT + "M";
+    public static final String WATER_SUBTEXT = WATER_RENT + "M";
+    public static final String PROMENADE_SUBTEXT = PROMENADE_RENT + "M";
 }
 
